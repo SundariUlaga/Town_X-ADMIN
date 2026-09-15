@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Sky blue — primary (same as frontend) */
+  --color-brand-50: #e6f4fd;
+  --color-brand-100: #bee3fa;
+  --color-brand-200: #7cc5f5;
+  --color-brand-300: #38bdf8;
+  --color-brand-400: #0ea5e9;
+  --color-brand-500: #0ea5e9;
+  --color-brand-600: #0284c7;
+  --color-brand-700: #0369a1;
+  --color-brand-800: #075985;
+  --color-brand-900: #0c4a6e;
+  --color-brand-950: #082f49;
+
+  --color-primary-50: #e6f4fd;
+  --color-primary-100: #bee3fa;
+  --color-primary-200: #7cc5f5;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  /* Terracotta — secondary */
+  --color-secondary-50: #fdeee7;
+  --color-secondary-100: #fad1bd;
+  --color-secondary-200: #f3a57c;
+  --color-secondary-300: #f5845e;
+  --color-secondary-400: #ea580c;
+  --color-secondary-500: #ea580c;
+  --color-secondary-600: #b4460c;
+  --color-secondary-700: #b4460c;
+  --color-secondary-800: #7c3009;
+  --color-secondary-900: #4a1d06;
+
+  /* Accent yellow */
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-200: #fef08a;
+  --color-accent-300: #fde047;
+  --color-accent-400: #facc15;
+  --color-accent-500: #facc15;
+  --color-accent-600: #eab308;
+  --color-accent-700: #ca8a04;
+  --color-accent-800: #a16207;
+  --color-accent-900: #854d0e;
+
+  --color-surface: #f8fafc;
+  --color-ink: #1c1c1a;
+  --color-ink-muted: #5c5c58;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --shadow-soft-sm: 0 1px 2px rgba(28, 28, 26, 0.05), 0 1px 1px rgba(28, 28, 26, 0.04);
+  --shadow-soft-md: 0 4px 12px rgba(28, 28, 26, 0.07), 0 2px 4px rgba(28, 28, 26, 0.05);
+  --shadow-brand-glow: 0 8px 28px rgba(14, 165, 233, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #f8fafc;
+  color: #1c1c1a;
+}
+
+::selection {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.admin-table thead tr {
+  background: #f8fafc;
+}
+
+.admin-table th {
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.admin-table td {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.admin-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: #f8fafc;
+}

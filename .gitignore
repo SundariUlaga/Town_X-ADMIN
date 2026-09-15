@@ -1,0 +1,8 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Accidental root-level npm files (app lives in admin-app/)
+node_modules/
+/package-lock.json
