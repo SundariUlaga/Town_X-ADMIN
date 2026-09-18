@@ -11,6 +11,7 @@ import UserDetails from "@/pages/UserDetails";
 import Properties from "@/pages/Properties";
 import PropertyDetails from "@/pages/PropertyDetails";
 import Reports from "@/pages/Reports";
+import Testimonials from "@/pages/Testimonials";
 import AuditLogs from "@/pages/AuditLogs";
 import Settings from "@/pages/Settings";
 import { QueueLanding } from "@/components/common/QueueLanding";
@@ -49,6 +50,7 @@ export default function App() {
             <Route path="/users" element={<Users />} />
             <Route path="/users/:id" element={<UserDetails />} />
             <Route path="/reports" element={<Reports />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/audit-logs" element={<AuditLogs />} />
             <Route path="/settings" element={<Settings />} />
           </Route>

@@ -27,6 +27,7 @@ export const BREADCRUMB_LABELS = {
   scheduled: "Scheduled",
   expired: "Expired",
   reports: "Reports",
+  testimonials: "Testimonials",
   "audit-logs": "Audit logs",
   users: "Users",
   settings: "Settings",

@@ -10,6 +10,7 @@ import {
   Settings,
   ShieldAlert,
   Users,
+  Quote,
 } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { TownXLogo } from "@/components/brand/TownXLogo";
@@ -135,7 +136,10 @@ export function Sidebar({ open, onClose }) {
   );
 
   const totalAttention =
-    (stats.pending_properties || 0) + (stats.pending_advertisements || 0) + (stats.open_reports || 0);
+    (stats.pending_properties || 0) +
+    (stats.pending_advertisements || 0) +
+    (stats.open_reports || 0) +
+    (stats.pending_testimonials || 0);
 
   return (
     <>
@@ -202,6 +206,14 @@ export function Sidebar({ open, onClose }) {
           <NavGroup label="Properties" icon={Building2} children={propertyChildren} />
           <div className="space-y-1">
             <NavLink to="/users" label="Users" icon={Users} onClose={onClose} />
+            <NavLink
+              to="/testimonials"
+              label="Testimonials"
+              icon={Quote}
+              count={stats.pending_testimonials}
+              urgent
+              onClose={onClose}
+            />
             <NavLink to="/audit-logs" label="Audit logs" icon={ClipboardList} onClose={onClose} />
             <NavLink to="/settings" label="Settings" icon={Settings} onClose={onClose} />
           </div>

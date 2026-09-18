@@ -117,6 +117,7 @@ export default function Properties() {
                   <th>Location</th>
                   <th>Price</th>
                   <th>Status</th>
+                  <th>Docs</th>
                   <th>Owner</th>
                   <th>Submitted</th>
                   <th />
@@ -134,6 +135,13 @@ export default function Properties() {
                     <td className="text-slate-600">₹{property.expected_price.toLocaleString("en-IN")}</td>
                     <td>
                       <StatusBadge status={property.status} />
+                    </td>
+                    <td className="capitalize text-slate-600">
+                      {property.verification_tier === "verified"
+                        ? "Verified"
+                        : property.verification_tier === "pending"
+                          ? "Pending"
+                          : "Not verified"}
                     </td>
                     <td className="text-slate-600">{property.owner_name || "—"}</td>
                     <td className="text-slate-500">{formatDate(property.created_at)}</td>
