@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAdminAuth } from "@/context/AdminAuthContext";
-import { getApiErrorMessage } from "@/services/api";
+import { getApiErrorMessage, SESSION_EXPIRED_MESSAGE, consumeAdminSessionExpired } from "@/services/api";
 import { TownXLogo } from "@/components/brand/TownXLogo";
 
 export default function Login() {
@@ -11,6 +11,11 @@ export default function Login() {
   const [password, setPassword] = useState("Admin@123");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [expiredNotice] = useState(() => {
+    const fromQuery = new URLSearchParams(window.location.search).get("reason") === "expired";
+    const fromFlag = consumeAdminSessionExpired();
+    return fromQuery || fromFlag ? SESSION_EXPIRED_MESSAGE : "";
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -71,6 +76,7 @@ export default function Login() {
                 required
               />
             </div>
+            {expiredNotice ? <p className="text-xs text-amber-800">{expiredNotice}</p> : null}
             {error ? <p className="text-xs text-red-600">{error}</p> : null}
             <button
               type="submit"
